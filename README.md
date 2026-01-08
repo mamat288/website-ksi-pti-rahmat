@@ -20,6 +20,6 @@ dengan tampilan modern dan fitur AI Fit Finder untuk rekomendasi ukuran.
 - GitHub Pages
 
 ## 🌐 Demo Website
-https://USERNAME.github.io/denimverse/
+https://mamat288.github.io/website-ksi-pti-rahmat/
 
 ## 📁 Struktur Project
