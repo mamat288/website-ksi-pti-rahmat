@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran Berhasil - DENIMVERSE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #0d1117; color: #e4e6eb; font-family: 'Inter', sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; }
+        .denim-cta { background-color: #2b6cb0; transition: background-color 0.3s; }
+        .denim-cta:hover { background-color: #3182ce; }
+    </style>
+</head>
+<body>
+
+    <div class="w-full max-w-2xl p-8 bg-gray-900 rounded-xl shadow-2xl border border-green-500/50 text-center">
+        
+        <svg class="w-20 h-20 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        
+        <h1 class="text-4xl font-bold mb-3 text-green-400">Pembayaran Berhasil!</h1>
+        <p class="text-xl text-gray-300 mb-6">Pesanan Anda telah kami terima.</p>
+        
+        <div class="bg-gray-800 p-6 rounded-lg text-left mb-6 space-y-2">
+            <p class="text-sm text-gray-400">Nomor Pesanan</p>
+            <p class="text-2xl font-extrabold text-indigo-400">#DV20251203-A12X</p>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-lg text-left mb-8 space-y-2">
+            <p class="text-lg font-semibold">Ringkasan Pembayaran</p>
+            <div class="flex justify-between text-sm">
+                <span>Total Item</span>
+                <span>Rp 1.599.000</span>
+            </div>
+            <div class="flex justify-between text-sm">
+                <span>Total Ongkir</span>
+                <span>Rp 25.000</span>
+            </div>
+            <div class="flex justify-between text-xl font-bold border-t border-gray-700 pt-2 mt-2">
+                <span>Total Dibayar</span>
+                <span class="text-green-400">Rp 1.624.000</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="dashboard.html" class="denim-cta py-3 font-semibold rounded-lg">
+                Cek Status Pesanan
+            </a>
+            <a href="invoice.html" class="py-3 font-semibold rounded-lg border border-indigo-400 text-indigo-400 hover:bg-indigo-900 transition">
+                Lihat Invoice
+            </a>
+        </div>
+        
+        <p class="text-xs text-gray-500 mt-6">Email konfirmasi dan invoice telah dikirimkan ke email Anda.</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - DENIMVERSE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #0d1117; color: #e4e6eb; font-family: sans-serif; }
+        .admin-cta { background-color: #e53e3e; transition: background-color 0.3s; }
+        .admin-cta:hover { background-color: #c53030; }
+    </style>
+</head>
+<body class="min-h-screen">
+    <header class="bg-gray-900 p-4 border-b border-red-500/50 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-red-400">DENIMVERSE ADMIN PANEL</h1>
+        <button onclick="window.location.href='admin-login.html';" class="admin-cta px-4 py-2 text-sm rounded-lg font-semibold">
+            Logout
+        </button>
+    </header>
+
+    <main class="p-8">
+        <h2 class="text-3xl font-semibold mb-6">Dashboard Administrator</h2>
+        <p class="text-gray-400 mb-8">Selamat datang, Administrator. Kelola situs web dan pesanan di sini.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 bg-gray-800 rounded-lg shadow-xl border border-gray-700 hover:border-red-500 transition duration-300">
+                <h3 class="text-xl font-bold text-red-400 mb-3">Kelola Pesanan</h3>
+                <p class="text-gray-400 mb-4">Lihat, proses, dan perbarui status semua pesanan pelanggan.</p>
+                <a href="admin-orders.html" class="inline-block admin-cta px-4 py-2 text-sm rounded-lg font-semibold">Lihat Semua Pesanan</a>
+            </div>
+
+            <div class="p-6 bg-gray-800 rounded-lg shadow-xl border border-gray-700 hover:border-red-500 transition duration-300">
+                <h3 class="text-xl font-bold text-red-400 mb-3">Kelola Produk</h3>
+                <p class="text-gray-400 mb-4">Tambah produk baru, edit deskripsi, dan atur stok.</p>
+                <a href="admin-products.html" class="inline-block admin-cta px-4 py-2 text-sm rounded-lg font-semibold">Lihat Semua Produk</a>
+            </div>
+
+            <div class="p-6 bg-gray-800 rounded-lg shadow-xl border border-gray-700 hover:border-red-500 transition duration-300">
+                <h3 class="text-xl font-bold text-red-400 mb-3">Kelola Pelanggan</h3>
+                <p class="text-gray-400 mb-4">Lihat daftar akun pelanggan dan riwayat pembelian.</p>
+                <a href="admin-customers.html" class="inline-block admin-cta px-4 py-2 text-sm rounded-lg font-semibold">Daftar Pelanggan</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

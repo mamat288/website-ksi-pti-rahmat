@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - DENIMVERSE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #0d1117; color: #e4e6eb; font-family: 'Inter', sans-serif; }
+        .denim-cta { background-color: #2b6cb0; transition: background-color 0.3s; }
+        .denim-cta:hover { background-color: #3182ce; }
+        .input-style { padding: 0.75rem; background-color: #1a202c; color: white; border: 1px solid #4a5568; border-radius: 0.5rem; width: 100%; }
+        .radio-card:checked + label { border-color: #4c51bf; background-color: #1a202c; }
+    </style>
+</head>
+<body>
+
+    <header class="bg-gray-900 shadow-lg">
+        <div class="container mx-auto px-4 py-4 text-center">
+            <a href="index.html" class="text-3xl font-bold tracking-widest text-indigo-400">DENIMVERSE</a>
+            <p class="text-sm text-gray-400 mt-1">Langkah 1 dari 3: Informasi Pengiriman</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            
+            <div class="lg:col-span-2 space-y-8">
+                
+                <div class="bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-800">
+                    <h2 class="text-2xl font-bold mb-4 border-b border-gray-700 pb-2">1. Detail Pengiriman</h2>
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <input type="text" placeholder="Nama Lengkap" class="input-style" required>
+                            <input type="email" placeholder="Email" class="input-style" required>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <input type="tel" placeholder="Nomor Telepon" class="input-style" required>
+                            <select class="input-style">
+                                <option>Pilih Provinsi</option>
+                                <option>DKI Jakarta</option>
+                                <option>Jawa Barat</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Alamat Lengkap (Jl., No. Rumah, RT/RW)" class="input-style mb-4" rows="3" required></textarea>
+                    </form>
+                </div>
+
+                <div class="bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-800">
+                    <h2 class="text-2xl font-bold mb-4 border-b border-gray-700 pb-2">2. Metode Pengiriman</h2>
+                    <div class="space-y-3">
+                        <input type="radio" id="reguler" name="shipping" class="radio-card hidden" checked>
+                        <label for="reguler" class="flex justify-between items-center p-4 bg-gray-800 rounded-lg border border-gray-700 cursor-pointer transition">
+                            <span>Reguler (3-5 Hari)</span>
+                            <span class="font-bold">Rp 25.000</span>
+                        </label>
+
+                        <input type="radio" id="express" name="shipping" class="radio-card hidden">
+                        <label for="express" class="flex justify-between items-center p-4 bg-gray-800 rounded-lg border border-gray-700 cursor-pointer transition">
+                            <span>Express (1-2 Hari)</span>
+                            <span class="font-bold">Rp 50.000</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-800">
+                    <h2 class="text-2xl font-bold mb-4 border-b border-gray-700 pb-2">3. Metode Pembayaran</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <input type="radio" id="bank" name="payment" class="radio-card hidden" checked>
+                        <label for="bank" class="text-center p-4 bg-gray-800 rounded-lg border border-gray-700 cursor-pointer transition">
+                            <p class="font-bold">Transfer Bank</p>
+                            <p class="text-xs text-gray-400">BCA, Mandiri</p>
+                        </label>
+
+                        <input type="radio" id="e-wallet" name="payment" class="radio-card hidden">
+                        <label for="e-wallet" class="text-center p-4 bg-gray-800 rounded-lg border border-gray-700 cursor-pointer transition">
+                            <p class="font-bold">E-Wallet</p>
+                            <p class="text-xs text-gray-400">Gopay, Dana, OVO</p>
+                        </label>
+
+                        <input type="radio" id="cc" name="payment" class="radio-card hidden">
+                        <label for="cc" class="text-center p-4 bg-gray-800 rounded-lg border border-gray-700 cursor-pointer transition">
+                            <p class="font-bold">Kartu Kredit</p>
+                            <p class="text-xs text-gray-400">Visa, Mastercard</p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 p-6 rounded-xl shadow-2xl border border-indigo-500/30 h-fit sticky top-20">
+                <h3 class="text-2xl font-bold mb-4">Ringkasan Pesanan</h3>
+                
+                <div class="space-y-3 mb-6 border-b border-gray-700 pb-4 text-sm">
+                    <div class="flex justify-between">
+                        <span>The Midnight Raw (x1)</span>
+                        <span>Rp 899.000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>The Coastal Fade (x1)</span>
+                        <span>Rp 750.000</span>
+                    </div>
+                    <div class="flex justify-between text-gray-400">
+                        <span>Subtotal</span>
+                        <span>Rp 1.649.000</span>
+                    </div>
+                    <div class="flex justify-between text-gray-400">
+                        <span>Ongkos Kirim (Reguler)</span>
+                        <span>Rp 25.000</span>
+                    </div>
+                    <div class="flex justify-between text-yellow-400">
+                        <span>Diskon (PROMO)</span>
+                        <span>- Rp 50.000</span>
+                    </div>
+                </div>
+
+                <div class="flex justify-between text-2xl font-extrabold mb-6">
+                    <span>TOTAL BAYAR</span>
+                    <span class="text-green-400">Rp 1.624.000</span>
+                </div>
+                
+                <button class="denim-cta w-full py-4 font-extrabold rounded-lg shadow-xl text-lg" onclick="window.location.href='order-success.html'">
+                    Lakukan Pembayaran (Rp 1.624.000)
+                </button>
+                <p class="text-xs text-gray-500 text-center mt-3">Dengan menekan tombol ini, Anda menyetujui Syarat & Ketentuan kami.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

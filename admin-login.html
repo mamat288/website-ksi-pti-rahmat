@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - DENIMVERSE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #0d1117; color: #e4e6eb; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .admin-cta { background-color: #e53e3e; /* Merah untuk Admin */ transition: background-color 0.3s; }
+        .admin-cta:hover { background-color: #c53030; }
+        .input-style { padding: 0.75rem; background-color: #1a202c; color: white; border: 1px solid #4a5568; border-radius: 0.5rem; width: 100%; }
+    </style>
+</head>
+<body>
+
+<div class="w-full max-w-md p-8 bg-gray-900 rounded-xl shadow-2xl border border-red-500/50">
+    <div class="text-center mb-8">
+        <a href="index.html" class="text-3xl font-bold tracking-wider text-red-400">DENIMVERSE ADMIN</a>
+        <p class="text-gray-400 mt-2">Masuk ke Panel Administrasi</p>
+    </div>
+
+    <form onsubmit="event.preventDefault(); window.location.href='admin-dashboard.html';">
+        <div class="mb-4">
+            <label for="admin-username" class="block text-sm font-medium mb-1">Username Admin</label>
+            <input type="text" id="admin-username" class="input-style" placeholder="admin_user" required>
+        </div>
+        <div class="mb-6">
+            <label for="admin-password" class="block text-sm font-medium mb-1">Password</label>
+            <input type="password" id="admin-password" class="input-style" placeholder="********" required>
+        </div>
+        
+        <button type="submit" class="admin-cta w-full py-3 font-semibold rounded-lg shadow-lg">
+            Masuk Sebagai Administrator
+        </button>
+    </form>
+</div>
+
+</body>
+</html>

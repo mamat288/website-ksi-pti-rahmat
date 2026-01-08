@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Midnight Raw | DENIMVERSE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900">
+    <script>
+function calculateFit() {
+    const height = document.getElementById("height").value;
+    const weight = document.getElementById("weight").value;
+    const fit = document.getElementById("fit").value;
+    const activity = document.getElementById("activity").value;
+    const resultBox = document.getElementById("aiResult");
+    const resultText = document.getElementById("resultText");
+
+    if (!height || !weight || !fit || !activity) {
+        alert("Mohon lengkapi semua data untuk analisis AI.");
+        return;
+    }
+
+    let size = "32";
+    let confidence = "90%";
+
+    // Simulasi logika AI
+    if (height < 165 && weight < 60) size = "28";
+    else if (height < 170) size = "30";
+    else if (height < 180) size = "32";
+    else size = "34";
+
+    if (fit === "slim") confidence = "93%";
+    if (activity === "high") confidence = "88%";
+
+    resultText.innerHTML = `
+        Berdasarkan <strong>tinggi ${height} cm</strong>, 
+        <strong>berat ${weight} kg</strong>, dan preferensi Anda:<br><br>
+        👉 <span class="text-indigo-400 font-semibold">Ukuran yang direkomendasikan: ${size}</span><br>
+        👉 Tingkat kecocokan AI: <strong>${confidence}</strong><br><br>
+        💡 *Disarankan mencoba ukuran ${size} untuk kenyamanan optimal.*
+    `;
+
+    resultBox.classList.remove("hidden");
+}
+</script>
+
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-gray-900 bg-opacity-95 backdrop-blur border-b border-gray-800">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold tracking-widest text-indigo-400">DENIMVERSE</a>
+        <a href="cart.html" class="hover:text-indigo-400 transition">🛒 Cart</a>
+    </div>
+</header>
+
+<!-- PRODUCT DETAIL -->
+<section class="container mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+    <!-- IMAGE -->
+    <div class="space-y-4">
+        <img src="celanamidnight.jpg" class="rounded-xl shadow-2xl w-full">
+        <div class="grid grid-cols-4 gap-3">
+            <img src="celanamidnight.jpg" class="rounded-lg cursor-pointer opacity-80 hover:opacity-100">
+            <img src="celanamidnight.jpg" class="rounded-lg cursor-pointer opacity-80 hover:opacity-100">
+            <img src="celanamidnight.jpg" class="rounded-lg cursor-pointer opacity-80 hover:opacity-100">
+            <img src="celanamidnight.jpg" class="rounded-lg cursor-pointer opacity-80 hover:opacity-100">
+        </div>
+    </div>
+
+    <!-- INFO -->
+    <div>
+        <h1 class="text-4xl font-bold mb-3">The Midnight Raw</h1>
+        <p class="text-indigo-400 mb-4">Slim Fit | Raw Denim Premium</p>
+        <p class="text-3xl font-bold mb-6">Rp 899.000</p>
+
+        <p class="text-gray-400 mb-6">
+            Dibuat dari raw denim premium dengan potongan modern.
+            Cocok untuk gaya kasual hingga smart casual.
+        </p>
+
+        <!-- SIZE -->
+        <div class="mb-6">
+            <p class="mb-2 font-semibold">Pilih Ukuran</p>
+            <div class="flex gap-3">
+                <button class="px-4 py-2 border rounded-lg hover:border-indigo-400">28</button>
+                <button class="px-4 py-2 border rounded-lg hover:border-indigo-400">30</button>
+                <button class="px-4 py-2 border rounded-lg hover:border-indigo-400">32</button>
+                <button class="px-4 py-2 border rounded-lg hover:border-indigo-400">34</button>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <button class="denim-cta w-full py-4 text-lg rounded-lg mb-4">
+            🛒 Tambahkan ke Keranjang
+        </button>
+
+        <!-- AI FIT FINDER -->
+<section class="mt-10 bg-gradient-to-br from-gray-900 to-gray-800 border border-indigo-500/30 rounded-2xl p-6 shadow-2xl">
+
+    <div class="flex items-center gap-3 mb-4">
+        <div class="bg-indigo-500/20 p-3 rounded-full">
+            🤖
+        </div>
+        <div>
+            <h2 class="text-2xl font-bold text-indigo-400">AI Fit Finder</h2>
+            <p class="text-sm text-gray-400">Rekomendasi ukuran berbasis data tubuh</p>
+        </div>
+    </div>
+
+    <p class="text-gray-300 mb-6">
+        Masukkan data tubuh Anda, sistem AI kami akan memprediksi ukuran celana denim yang paling pas.
+    </p>
+
+    <!-- INPUT -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <input id="height" type="number" placeholder="Tinggi Badan (cm)" class="input-style">
+        <input id="weight" type="number" placeholder="Berat Badan (kg)" class="input-style">
+        <select id="fit" class="input-style">
+            <option value="">Preferensi Fit</option>
+            <option value="slim">Slim Fit</option>
+            <option value="tapered">Tapered Fit</option>
+            <option value="regular">Regular Fit</option>
+        </select>
+        <select id="activity" class="input-style">
+            <option value="">Aktivitas Harian</option>
+            <option value="low">Santai</option>
+            <option value="medium">Kerja / Kuliah</option>
+            <option value="high">Aktif / Banyak Bergerak</option>
+        </select>
+    </div>
+
+    <!-- BUTTON -->
+    <button onclick="calculateFit()" class="denim-cta w-full py-3 rounded-xl text-lg mb-4">
+        🔍 Analisis Ukuran Saya
+    </button>
+
+    <!-- RESULT -->
+    <div id="aiResult" class="hidden mt-6 bg-gray-900 border border-indigo-500/30 rounded-xl p-5 animate-fade">
+        <h3 class="text-xl font-bold text-green-400 mb-2">✅ Rekomendasi AI</h3>
+        <p id="resultText" class="text-gray-300"></p>
+    </div>
+
+</section>
+
+
+<!-- REVIEWS -->
+<section class="container mx-auto px-4 pb-20">
+    <h2 class="text-3xl font-bold mb-6">⭐ Ulasan Pelanggan</h2>
+
+    <div class="space-y-4">
+        <div class="bg-gray-800 p-5 rounded-xl">
+            <p class="font-semibold">Rahmat Dwi</p>
+            <p class="text-sm text-gray-400">Ukuran pas banget, kualitas mantap 🔥</p>
+        </div>
+        <div class="bg-gray-800 p-5 rounded-xl">
+            <p class="font-semibold">Andi Pratama</p>
+            <p class="text-sm text-gray-400">AI Fit Finder-nya beneran ngebantu!</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Pembayaran - #DV20251203-A12X</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #0d1117; color: #e4e6eb; font-family: 'Inter', sans-serif; padding-top: 2rem; padding-bottom: 2rem; }
+        .print-area { max-width: 800px; margin: 0 auto; background-color: #1a202c; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); }
+        .denim-cta { background-color: #2b6cb0; transition: background-color 0.3s; }
+        .denim-cta:hover { background-color: #3182ce; }
+        /* Style untuk mode cetak */
+        @media print {
+            body { background-color: white; color: black; }
+            .print-area { background-color: white; color: black; box-shadow: none; border: 1px solid #ccc; }
+            .no-print { display: none; }
+            .text-indigo-400, .text-green-400, .text-yellow-400, .text-gray-400, .text-gray-500 { color: black !important; }
+            table, th, td { border-color: black !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print text-center mb-6">
+        <button class="denim-cta py-2 px-6 rounded-lg font-semibold" onclick="window.print()">
+            Cetak Invoice
+        </button>
+        <a href="dashboard.html" class="bg-gray-700 hover:bg-gray-600 py-2 px-6 rounded-lg font-semibold ml-3 transition">Kembali ke Dashboard</a>
+    </div>
+
+    <div class="print-area">
+        
+        <div class="flex justify-between items-center border-b border-gray-700 pb-4 mb-6">
+            <div>
+                <h1 class="text-3xl font-bold tracking-widest text-indigo-400">DENIMVERSE</h1>
+                <p class="text-sm text-gray-400">Invoice Pembelian</p>
+            </div>
+            <div class="text-right">
+                <p class="text-xl font-bold">INVOICE #DV20251203-A12X</p>
+                <p class="text-sm text-gray-400">Tanggal: 03 Desember 2025</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8 mb-8 text-sm">
+            <div>
+                <p class="font-bold mb-1">DITAGI KEPADA:</p>
+                <p>John Doe</p>
+                <p>john.doe@email.com</p>
+                <p>0812-3456-7890</p>
+            </div>
+            <div>
+                <p class="font-bold mb-1">DIKIRIM KE:</p>
+                <p>John Doe</p>
+                <p class="text-gray-400">Jl. Teknologi No. 12A, RT 05/RW 02</p>
+                <p class="text-gray-400">Kec. Kebayoran Lama, DKI Jakarta 12240</p>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-gray-800">
+                        <th class="py-3 px-4 border border-gray-700">Deskripsi</th>
+                        <th class="py-3 px-4 border border-gray-700 w-20 text-center">Qty</th>
+                        <th class="py-3 px-4 border border-gray-700 w-32 text-right">Harga Satuan</th>
+                        <th class="py-3 px-4 border border-gray-700 w-32 text-right">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-gray-800">
+                        <td class="py-3 px-4 border border-gray-800">
+                            <p class="font-semibold">The Midnight Raw</p>
+                            <p class="text-xs text-gray-400">Slim Fit, Size 31</p>
+                        </td>
+                        <td class="py-3 px-4 border border-gray-800 text-center">1</td>
+                        <td class="py-3 px-4 border border-gray-800 text-right">Rp 899.000</td>
+                        <td class="py-3 px-4 border border-gray-800 text-right">Rp 899.000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-800">
+                        <td class="py-3 px-4 border border-gray-800">
+                            <p class="font-semibold">The Coastal Fade</p>
+                            <p class="text-xs text-gray-400">Tapered Fit, Size 32</p>
+                        </td>
+                        <td class="py-3 px-4 border border-gray-800 text-center">1</td>
+                        <td class="py-3 px-4 border border-gray-800 text-right">Rp 750.000</td>
+                        <td class="py-3 px-4 border border-gray-800 text-right">Rp 750.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="grid grid-cols-2">
+            <div></div> <div class="space-y-2 text-sm">
+                <div class="flex justify-between pt-2 border-t border-gray-700">
+                    <span>Subtotal</span>
+                    <span>Rp 1.649.000</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Ongkos Kirim (Reguler)</span>
+                    <span>Rp 25.000</span>
+                </div>
+                <div class="flex justify-between text-yellow-400">
+                    <span>Diskon (PROMO)</span>
+                    <span>- Rp 50.000</span>
+                </div>
+                <div class="flex justify-between text-xl font-bold pt-3 border-t-2 border-indigo-400">
+                    <span>TOTAL DIBAYAR</span>
+                    <span class="text-green-400">Rp 1.624.000</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 pt-4 border-t border-gray-700 text-center text-xs text-gray-500">
+            Terima kasih telah berbelanja di DENIMVERSE. Barang akan dikirim dalam 1x24 jam.
+        </div>
+    </div>
+
+</body>
+</html>
